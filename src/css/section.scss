@@ -1,0 +1,15 @@
+.section {
+  background-color: #fff;
+
+  &__heading {
+    font-size: 16px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    margin:0;
+    
+    &--last {
+      margin-top: 10px;
+    }
+  }
+}
