@@ -75,11 +75,10 @@
     //   addNewTask(newTaskContent);
     // }
 
-    if (!newTaskContent) {
+    if ( !newTaskContent ) {
       return;
     }
     addNewTask(newTaskContent);
-
   }
 
   const init = () => {

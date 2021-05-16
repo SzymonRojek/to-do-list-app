@@ -84,7 +84,6 @@ html {
 }
 
 .list__item {
-  margin: 0;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -93,11 +92,11 @@ html {
 }
 
 .list__task {
-  padding: 0 8px;
+  padding-right: 5px;
+  font-size: 13px;
   font-weight: 400;
   overflow-wrap: anywhere;
   word-break: break-all;
-  font-size: 13px;
 }
 
 .list__task--done {
@@ -105,6 +104,7 @@ html {
 }
 
 .list__button {
+  margin-right: 10px;
   color: #eee;
   width: 25px;
   height: 25px;
@@ -125,6 +125,7 @@ html {
 
 .list__button--done {
   background-color: #1C8622;
+  margin-left: 10px;
 }
 
 .list__button--done:hover {
