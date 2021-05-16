@@ -66,10 +66,10 @@
   const onFormSubmit = e => {
     e.preventDefault();
   
-    const newTaskElement = document.querySelector('.js-newTask');
-    const newTaskContent = newTaskElement.value.trim();
+    const newTask = document.querySelector('.js-newTask');
+    const newTaskContent = newTask.value.trim();
     
-    resetInput(newTaskElement);
+    resetInput(newTask);
 
     // if ( newTaskContent ) {    
     //   addNewTask(newTaskContent);
@@ -79,7 +79,7 @@
       return;
     }
     addNewTask(newTaskContent);
-    resetInput(newTask);
+
   }
 
   const init = () => {
