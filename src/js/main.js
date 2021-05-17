@@ -63,7 +63,7 @@
   const resetInput = newTask => {
     newTask.value = '';
     newTask.focus();
-}
+  }
 
   const onFormSubmit = e => {
     e.preventDefault();
@@ -80,6 +80,7 @@
     if ( !newTaskContent ) {
       return;
     }
+
     addNewTask(newTaskContent);
   }
 
