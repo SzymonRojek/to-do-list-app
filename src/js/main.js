@@ -41,8 +41,7 @@
     let htmlString = '';
 
     for (const task of tasks) {
-      htmlString += 
-        `
+      htmlString += `
         <li class="list__item">
           <button class="list__button list__button--done js-done">
             ${task.done ? "✓" : ""}
@@ -76,7 +75,7 @@
 
     // if ( newTaskContent ) {    
     //   addNewTask(newTaskContent);
-    // }
+    // } 
 
     if ( !newTaskContent ) {
       return;
