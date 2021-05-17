@@ -3,6 +3,8 @@
 ## Description:
 This is a simple To-Do list application - helps to organize our daily tasks. Use it to capture and organize tasks the moment they pop into your head. 
 
+To-do application will be developed with additional features.
+
 ## Technologies:
 
 <table>
