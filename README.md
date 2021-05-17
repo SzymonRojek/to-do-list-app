@@ -1,9 +1,9 @@
 ## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/to-do-list-app/)
 
 ## Description:
-This is a simple To-Do list application - helps to organize our daily tasks. Use it to capture and organize tasks the moment they pop into your head. 
+This is a simple To-Do list application, helps to organize our daily tasks. Use it to capture and organize tasks the moment they pop into your head. 
 
-To-do application will be developed with additional features.
+To-Do application will be developed with additional features.
 
 ## Technologies:
 
