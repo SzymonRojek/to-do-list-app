@@ -73,10 +73,6 @@
     
     resetInput(newTask);
 
-    // if ( newTaskContent ) {    
-    //   addNewTask(newTaskContent);
-    // } 
-
     if ( !newTaskContent ) {
       return;
     }
