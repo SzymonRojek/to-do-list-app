@@ -52,10 +52,13 @@
   }
 }
 
-.section-grid{
+.section-grid {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
   @media (min-width: 767px) {
     display: grid;
     grid-template-columns: 1fr auto;
+    padding-bottom: 0;
   }
 }
 
