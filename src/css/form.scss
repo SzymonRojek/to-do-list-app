@@ -1,18 +1,20 @@
 .form {
   display: grid;
   grid-gap: 20px;
-  @media (min-width: 767px) {
-    grid-template-columns: 1fr auto;
-  }
+
+    @media (min-width: 767px) {
+      grid-template-columns: 1fr auto;
+    }
 
   &__input {
     padding: 10px;
     border: 1px solid #ddd;
     outline: none;
     border-radius: 3px;
-    &:focus {
-     border: 1px solid hsl(0, 1%, 17%);
-    }
+
+      &:focus {
+      border: 1px solid hsl(0, 1%, 17%);
+      }
   }
 
   &__addTaskButton {
@@ -22,6 +24,7 @@
     background-color: hsl(180, 100%, 25%);
     cursor: pointer;
     transition: transform .5s, background-color .3s ease-in;
+  
     &:hover {
       background-color: hsl(180, 100%, 30%);
 
@@ -29,6 +32,7 @@
         transform: scale(1.1);
       }
     }
+    
     &:active {
       outline: 1px solid hsl(0, 2%, 20%);
       background-color: hsl(180, 100%, 35%);
