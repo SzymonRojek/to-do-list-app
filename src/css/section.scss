@@ -2,18 +2,15 @@
   margin: 10px 0;
   background-color: #fff;
   box-shadow: 0 0 5px #ddd;
-  &__header {
+  &__heading {
     font-size: 20px;
     padding: 20px;
-    border-bottom: 1px solid #ddd;
     margin:0;
-    
-    &--last {
-      margin-top: 10px;
+    &--first {
+      border-bottom: 1px solid #ddd;
     }
   }
-
   &__body {
-  padding: 20px;
+    padding: 20px;
   }
 } 

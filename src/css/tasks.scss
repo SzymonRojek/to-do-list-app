@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-
   &__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -10,24 +9,20 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-
     &--toggleHidden {
       display: none;
     }
   } 
-
   &__singleTask {
     padding-right: 5px;
     font-size: 13px;
     font-weight: 400;
     overflow-wrap: anywhere;
     word-break: break-all;
-
     &--done {
       text-decoration: line-through;
     }
   }
-
   &__button {
     display: flex;
     justify-content: center;
@@ -37,22 +32,19 @@
     width: 30px;
     height: 30px;
     padding: 0;
-    background-color: #EF2E44;
+    background-color: hsl(0, 83%, 47%);  
     border: none;
     cursor: pointer;
     transition: background-color .3s ease-in;
-
     &:hover {
-      background-color: #de1414;  
+      background-color: hsl(0, 83%, 60%);
     }
     &:active {
       outline: 1px solid #222;
     }
-
     &--toggleDone {
       background-color: #1C8622;
       margin-left: 10px;
-
       &:hover {
         background-color: #05af05;
       }
@@ -60,13 +52,42 @@
   }
 }
 
-// .section__switcher {
-//   // display: grid;
-// }
-// .section__buttons {
-//   .switcher__button {
-//     border: none;
-//     background-color: transparent;
-//     color: teal;
-//   }
-// }
+.section-grid{
+  @media (min-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.section__buttons {
+  display: grid;
+    &--hiddenButtons {
+      display: none;
+    }
+
+    @media (min-width: 767px) {
+      grid-template-columns: 1fr 1fr;
+      justify-items: end;
+    }
+}
+
+.section__button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  color: teal;
+  padding: 15px 25px;
+  outline: none;
+  transition: color .2s ease-in;
+  cursor: pointer;
+  &:hover {
+    color: hsl(180, 100%, 40%);;
+  }
+ 
+  &:disabled {
+    background: rgb(255, 255, 255);
+    color: rgb(201, 194, 194);
+    cursor: not-allowed;
+  }
+}

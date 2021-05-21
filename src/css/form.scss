@@ -10,26 +10,28 @@
     border: 1px solid #ddd;
     outline: none;
     border-radius: 3px;
-
     &:focus {
-     border: 1px solid #000;
+     border: 1px solid hsl(0, 1%, 17%);
     }
   }
 
   &__addTaskButton {
     padding: 10px;
     color: #fff;
-    border: none;
+    border: 1px solid transparent;
     background-color: hsl(180, 100%, 25%);
     cursor: pointer;
-    transition: background-color .3s ease-in;
-
+    transition: transform .5s, background-color .3s ease-in;
     &:hover {
-      background-color: hsl(180, 100%, 30%);;
+      background-color: hsl(180, 100%, 30%);
+
+      @media (min-width: 767px) {
+        transform: scale(1.1);
+      }
     }
     &:active {
-      outline: 1px solid #222;
+      outline: 1px solid hsl(0, 2%, 20%);
       background-color: hsl(180, 100%, 35%);
-    }
+    } 
   }
 }
