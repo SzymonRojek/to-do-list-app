@@ -108,13 +108,8 @@
     }
   };
 
-  const getAllTasksDone = array => {
-    array.map(key => {
-      if (  key.done === undefined || key.done === false  ) {
-        key.done = true;
-        return key.done;
-      } 
-    });
+  const setAllTasksDone = array => {
+    array.map(key => key.done = true);
     render();
   };
 
@@ -123,7 +118,7 @@
 
     if ( doneButton ) {
       doneButton.addEventListener('click', () => {
-        getAllTasksDone(tasks);
+        setAllTasksDone(tasks);
       })
     }
   };
