@@ -109,7 +109,7 @@
   };
 
   const setAllTasksDone = array => {
-    array.map(key => key.done = true);
+    array.map( task => task.done = true);
     render();
   };
 
@@ -156,3 +156,16 @@
 
   init ();
 }
+
+
+let tasks = [
+  { content: 'siema', done: true },
+  { content: 'dobre', done: true},
+]
+
+const setAllTasksDone = array => {
+  array.map( task => task.done = true);
+  render();
+};
+
+console.log(setAllTasksDone(tasks));
