@@ -74,17 +74,20 @@
   const renderButtons = () => {
     let buttonsHTMLContent = '';
 
-     if ( tasks.length > 0) {
-      buttonsHTMLContent += `
-      <button class="section__button js-hideButton"  ${ tasks.every( task => !task.done) ? "disabled" : ""} >
-        ${ hideDoneTasks ? 'Pokaż ukończone' : 'Ukryj ukończone' }
-      </button>
-      <button class="section__button js-doneButton" ${ tasks.every( task => task.done) ? "disabled" : "" } 
-      >
-        Ukończ wszystkie
-      </button>
-    `;
-     }
+      if ( tasks.length > 0) {
+        buttonsHTMLContent += `
+          <button class="section__button js-hideButton"
+            ${ tasks.every( task => !task.done) ? "disabled" : ""} 
+          >
+            ${ hideDoneTasks ? 'Pokaż ukończone' : 'Ukryj ukończone' }
+          </button>
+          <button class="section__button js-doneButton" 
+            ${ tasks.every( task => task.done) ? "disabled" : "" } 
+          >
+            Ukończ wszystkie
+          </button>
+        `;
+      }
   
     document.querySelector('.js-buttons').innerHTML = buttonsHTMLContent;
   };
@@ -107,7 +110,7 @@
 
   const getAllTasksDone = array => {
     array.map(key => {
-      if (key.done === undefined || key.done === false) {
+      if (  key.done === undefined || key.done === false  ) {
         key.done = true;
         return key.done;
       } 
