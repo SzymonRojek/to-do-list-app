@@ -20,8 +20,7 @@
     padding-right: 5px;
     font-size: 13px;
     font-weight: 400;
-    overflow-wrap: anywhere;
-    word-break: break-all;
+    word-break: break-word;
 
       &--done {
         text-decoration: line-through;
