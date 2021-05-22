@@ -106,7 +106,10 @@
   };
 
   const setAllDoneTasks = array => {
-    array.map( task => task.done = true);
+    tasks = array.map( task => ({
+      ...task,
+      done: true,
+    }));
     render();
   };
 
