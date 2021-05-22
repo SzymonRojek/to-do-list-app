@@ -29,13 +29,12 @@
   }
 }
 
-
 .section__buttonsContainer {
   display: grid;
   grid-gap: 20px;
 
   @media (min-width: 767px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
   }
 }
 
