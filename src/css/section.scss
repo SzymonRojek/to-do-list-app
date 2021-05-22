@@ -10,7 +10,6 @@
  
     &--first {
       border-bottom: 1px solid #ddd;
-      background-color: greenś;
     }
   }
   
@@ -18,3 +17,44 @@
     padding: 20px;
   }
 } 
+
+.section__header {
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px 30px 0;
+
+  @media (min-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-bottom: 20px;
+  }
+}
+
+
+.section__buttonsContainer {
+  display: grid;
+  grid-gap: 20px;
+
+  @media (min-width: 767px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section__button {
+  margin: 0;
+  color: teal;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  transition: color .2s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    color: hsl(180, 100%, 40%);;
+  }
+
+  &:disabled {
+    background: rgb(255, 255, 255);
+    color: rgb(201, 194, 194);
+    cursor: not-allowed;
+  }
+}
