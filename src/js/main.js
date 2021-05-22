@@ -78,7 +78,7 @@
           <button class="section__button js-hideButton"
             ${ tasks.every( ({ done }) => !done) ? "disabled" : "" } 
           >
-            ${ hideDoneTasks ? 'Pokaż ukończone' : 'Ukryj ukończone' }
+            ${ hideDoneTasks ? 'Pokaż' : 'Ukryj' } ukończone
           </button>
           <button class="section__button js-doneButton" 
             ${ tasks.every( ({ done }) => done) ? "disabled" : "" } 
