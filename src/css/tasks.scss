@@ -11,10 +11,10 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
 
-      &--toggleHidden {
-        display: none;
-      }
-  } 
+    &--hidden {
+      display: none;
+    }
+  }
 
   &__singleTask {
     padding-right: 5px;
@@ -22,11 +22,11 @@
     font-weight: 400;
     word-break: break-word;
 
-      &--done {
-        text-decoration: line-through;
-      }
+    &--done {
+      text-decoration: line-through;
+    }
   }
-  
+
   &__button {
     display: flex;
     justify-content: center;
@@ -36,25 +36,26 @@
     width: 30px;
     height: 30px;
     padding: 0;
-    background-color: hsl(0, 83%, 47%);  
+    background-color: hsl(0, 83%, 47%);
     border: none;
     cursor: pointer;
     transition: background-color .3s ease-in;
+
+    &:hover {
+      background-color: hsl(0, 83%, 60%);
+    }
+
+    &:active {
+      outline: 1px solid #222;
+    }
+
+    &--toggleDone {
+      background-color: #1C8622;
+      margin-left: 10px;
+
       &:hover {
-        background-color: hsl(0, 83%, 60%);
+        background-color: #05af05;
       }
-
-      &:active {
-        outline: 1px solid #222;
-      }
-
-      &--toggleDone {
-        background-color: #1C8622;
-        margin-left: 10px;
-
-        &:hover {
-          background-color: #05af05;
-        }
-      }
+    }
   }
 }

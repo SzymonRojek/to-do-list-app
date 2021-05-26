@@ -6,17 +6,17 @@
   &__heading {
     font-size: 20px;
     padding: 20px;
-    margin:0;
- 
+    margin: 0;
+
     &--first {
       border-bottom: 1px solid #ddd;
     }
   }
-  
+
   &__body {
     padding: 20px;
   }
-} 
+}
 
 .section__header {
   border-bottom: 1px solid #ddd;
@@ -38,7 +38,7 @@
   }
 }
 
-.section__button {
+.buttons__button {
   margin: 0;
   color: teal;
   border: none;
@@ -48,7 +48,8 @@
   cursor: pointer;
 
   &:hover {
-    color: hsl(180, 100%, 40%);;
+    color: hsl(180, 100%, 40%);
+    ;
   }
 
   &:disabled {

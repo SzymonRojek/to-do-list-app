@@ -9,6 +9,7 @@
       ...tasks.slice(0, taskIndex),
       ...tasks.slice(taskIndex + 1),
     ];
+
     render();
   };
 
@@ -18,6 +19,7 @@
     { ...tasks[taskIndex], done: !tasks[taskIndex].done },
       ...tasks.slice(taskIndex + 1),
     ];
+
     render();
   };
 
@@ -26,6 +28,7 @@
       ...tasks,
       { content: newTaskContent },
     ];
+
     render();
   };
 
@@ -50,11 +53,8 @@
   };
 
   const renderTasks = () => {
-    let tasksListHTMLContent = '';
-
-    for (const task of tasks) {
-      tasksListHTMLContent += `
-        <li class="tasks__item${ task.done && hideDoneTasks ? " tasks__item--toggleHidden" : "" }">
+    const taskToHTML = task => `
+        <li class="tasks__item${ task.done && hideDoneTasks ? " tasks__item--hidden" : "" }">
           <button class="tasks__button tasks__button--toggleDone js-toggleDone">
             ${ task.done ? "✓" : "" }
           </button>
@@ -64,71 +64,72 @@
           <button class="tasks__button js-removeButton">
             🗑
           </button>
-        </li>`;
-    };
+        </li>`; 
 
-    document.querySelector('.js-tasks').innerHTML = tasksListHTMLContent;
+    const tasksElement = document.querySelector('.js-tasks');
+    tasksElement.innerHTML = tasks.map(taskToHTML).join('');
   };
 
   const renderButtons = () => {
-    let buttonsHTMLContent = '';
+    const buttonsElement = document.querySelector('.js-buttons');
 
-      if ( tasks.length > 0) {
-        buttonsHTMLContent += `
-          <button class="section__button js-hideButton"
-            ${ tasks.every( ({ done }) => !done) ? "disabled" : "" } 
-          >
-            ${ hideDoneTasks ? 'Pokaż' : 'Ukryj' } ukończone
-          </button>
-          <button class="section__button js-doneButton" 
-            ${ tasks.every( ({ done }) => done) ? "disabled" : "" } 
-          >
-            Ukończ wszystkie
-          </button>
-        `;
-      };
-  
-    document.querySelector('.js-buttons').innerHTML = buttonsHTMLContent;
+    if (!tasks.length) {
+      buttonsElement.innerHTML = '';
+      return;
+    }
+
+    buttonsElement.innerHTML = `
+      <button class="buttons__button js-toggleHideDoneTasks"
+        ${ tasks.every( ({ done }) => !done) ? "disabled" : "" } 
+      >
+        ${ hideDoneTasks ? 'Pokaż' : 'Ukryj' } ukończone
+      </button>
+      <button class="buttons__button js-markAllDone" 
+        ${ tasks.every( ({ done }) => done) ? "disabled" : "" } 
+      >
+        Ukończ wszystkie
+      </button>
+    `;
+
   };
 
-  const toggleHideDoneTaskClick = () => {
+  const toggleHideDoneTasks = () => {
     hideDoneTasks = !hideDoneTasks;
+
     render();
   };
 
-  const bindHideEvents = () => {
-    const hideButton = document.querySelector('.js-hideButton');
-      if ( hideButton ) {
-        hideButton.addEventListener('click', () => {
-          toggleHideDoneTaskClick();
-        });
-      };
+  const markAllTasksDone = () => {
+    tasks = tasks.map( task => ({
+       ...task,
+       done: true,
+     }));
+ 
+     render();
   };
+ 
+  const bindButtonsEvents = () => {
+    
+    const toggleHideDoneTasksButton = document.querySelector('.js-toggleHideDoneTasks');
 
-  const setAllDoneTasks = array => {
-    tasks = array.map( task => ({
-      ...task,
-      done: true,
-    }));
-    render();
-  };
+      if (toggleHideDoneTasksButton) {
+        toggleHideDoneTasksButton.addEventListener('click', toggleHideDoneTasks);
+      }
+ 
+    const markAllDoneButton = document.querySelector('.js-markAllDone');
 
-  const bindAllDoneTasks = () => {
-    const doneButton = document.querySelector('.js-doneButton');
-      if ( doneButton ) {
-        doneButton.addEventListener('click', () => {
-          setAllDoneTasks(tasks);
-        });
-      };
+      if (markAllDoneButton) {
+        markAllDoneButton.addEventListener('click', markAllTasksDone);
+      }
   };
 
   const render = () => {
     renderTasks();
-    renderButtons();
-    bindToggleDoneEvents();
     bindRemoveEvents();
-    bindHideEvents();
-    bindAllDoneTasks();
+    bindToggleDoneEvents();
+
+    renderButtons();
+    bindButtonsEvents();
   };
 
   const onFormSubmit = e => {
