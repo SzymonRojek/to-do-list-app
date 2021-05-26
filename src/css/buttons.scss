@@ -1,0 +1,28 @@
+.buttons {
+  display: grid;
+  grid-gap: 20px;
+
+  @media (min-width: 767px) {
+    grid-template-columns: auto auto;
+  }
+
+  .buttons__button {
+    margin: 0 20px 0 0;
+    color: teal;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    transition: color .2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      color: hsl(180, 100%, 40%);
+    }
+
+    &:disabled {
+      background: rgb(255, 255, 255);
+      color: rgb(201, 194, 194);
+      cursor: not-allowed;
+    }
+  }
+}
