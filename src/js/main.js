@@ -47,7 +47,7 @@
   };
 
   const renderTasks = () => {
-    const taskToHTML = task => `
+    const taskToHTML = tasks.map( task => `
         <li class="tasks__item${ task.done && hideDoneTasks ? " tasks__item--hidden" : "" }">
           <button class="tasks__button tasks__button--toggleDone js-toggleDone">
             ${ task.done ? "✓" : "" }
@@ -58,10 +58,10 @@
           <button class="tasks__button js-removeButton">
             🗑
           </button>
-        </li>`; 
+        </li>`).join(""); 
 
     const tasksElement = document.querySelector('.js-tasks');
-    tasksElement.innerHTML = tasks.map(taskToHTML).join('');
+    tasksElement.innerHTML = taskToHTML;
   };
 
   const renderButtons = () => {
@@ -84,7 +84,6 @@
         Ukończ wszystkie
       </button>
     `;
-
   };
 
   const toggleHideDoneTasks = () => {
