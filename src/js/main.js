@@ -1,6 +1,8 @@
 
 {
-  let tasks = [];
+  let tasks = [
+    {content: 'siema', done: false}
+  ];
 
   let hideDoneTasks = false;
  
@@ -14,11 +16,7 @@
   };
 
   const toggleDoneTask = taskIndex => {
-    tasks = [
-      ...tasks.slice(0, taskIndex),
-    { ...tasks[taskIndex], done: !tasks[taskIndex].done },
-      ...tasks.slice(taskIndex + 1),
-    ];
+   tasks = tasks.map( (task, index) => taskIndex === index ? { ...task, done: !task.done } : task)
 
     render();
   };
