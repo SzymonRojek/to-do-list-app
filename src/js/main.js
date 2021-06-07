@@ -5,14 +5,13 @@
   let hideDoneTasks = false;
  
   const removeTask = taskIndex => {
-    tasks = tasks.filter( (task, index) => taskIndex !== index);
+    tasks = tasks.filter( (_, index) => taskIndex !== index);
     
     render();
   };
 
-  console.log(tasks);
   const toggleDoneTask = taskIndex => {
-   tasks = tasks.map( (task, index) => taskIndex === index ? { ...task, done: !task.done } : task)
+   tasks = tasks.map( (task, index) => taskIndex === index ? { ...task, done: !task.done } : task);
 
     render();
   };
@@ -102,7 +101,6 @@
   };
  
   const bindButtonsEvents = () => {
-    
     const toggleHideDoneTasksButton = document.querySelector('.js-toggleHideDoneTasks');
 
       if (toggleHideDoneTasksButton) {
@@ -117,7 +115,6 @@
   };
 
   const render = () => {
-    console.log(tasks);
     renderTasks();
     bindRemoveEvents();
     bindToggleDoneEvents();
